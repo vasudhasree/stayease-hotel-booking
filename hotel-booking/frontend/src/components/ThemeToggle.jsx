@@ -1,0 +1,2 @@
+import {useEffect,useState} from 'react'
+export default function ThemeToggle(){const [dark,setDark]=useState(()=>localStorage.getItem('stayease_dark')==='1');useEffect(()=>{document.documentElement.classList.toggle('dark',dark);localStorage.setItem('stayease_dark',dark?'1':'0')},[dark]);return <button className="btn-secondary px-3" onClick={()=>setDark(v=>!v)} title="Toggle dark mode">{dark?'☀️':'🌙'}</button>}
